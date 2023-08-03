@@ -1,0 +1,36 @@
+---
+#tasks file for lamp
+
+- name: install mariadb
+  yum:
+    name: mariadb, mariadb-server
+    state: installed
+
+- name: start mariadb
+  service: 
+    name: mariadb
+    state: started
+    enabled: yes
+
+- name: copy info file
+  copy:
+    src: info.php
+    dest: /var/www/html/info.php
+
+
+- name: install php
+  yum:
+    name: php
+    state: installed
+
+- name: start httpd
+  service:
+     name: httpd
+     state: started
+     enabled: yes
+
+...
+ 
+  
+
+

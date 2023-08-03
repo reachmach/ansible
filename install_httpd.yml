@@ -1,0 +1,8 @@
+---
+
+- name: playbook to install apache
+  hosts: webserver
+
+  roles:
+    - httpd
+...
